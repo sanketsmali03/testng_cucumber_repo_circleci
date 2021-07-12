@@ -2,9 +2,6 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-environment:
-  export BROWSERSTACK_USERNAME: sanketmali4
-  export BROWSERSTACK_ACCESS_KEY: XaqpcHttuyFzXSzC3uNM
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
@@ -19,10 +16,6 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       # Use mvn clean and package as the standard maven build phase
-      - run:
-          name: environment variable
-          command: export BROWSERSTACK_USERNAME=sanketmali4 && export BROWSERSTACK_ACCESS_KEY=XaqpcHttuyFzXSzC3uNM
-
       - run:
           name: Build
           command: mvn -B -DskipTests clean package
